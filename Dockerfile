@@ -35,9 +35,8 @@ ENV GOTTY_TITLE_FORMAT="Instruqt Shell" \
 
 ADD gotty /usr/local/bin/gotty
 ADD gotty.conf ${GOTTY_CONFIG}
-ADD pre-start.sh /pre-start.sh
 ADD start.sh /start.sh
 
 EXPOSE 8080 22
 
-ENTRYPOINT ["/pre-start.sh"]
+ENTRYPOINT ["/start.sh"]
