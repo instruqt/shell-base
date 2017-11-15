@@ -33,6 +33,8 @@ ENV GOTTY_TITLE_FORMAT="Instruqt Shell" \
     EDITOR=nano \
     TERM=xterm
 
+RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+
 ADD gotty /usr/local/bin/gotty
 ADD gotty.conf ${GOTTY_CONFIG}
 ADD start.sh /start.sh
